@@ -1,0 +1,97 @@
+[[define "index"]]
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="/public/css/mini-default.min.css">
+  <link rel="stylesheet" href="/public/css/style.css">
+  <script src="/public/js/axios.min.js"></script>
+  <script src="/public/js/vue.min.js"></script>
+  <script src="/public/js/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div class="container">
+      <div>
+        <div align="left">
+          <p>Input:</p>
+        </div>
+        <input id="formula" type="text" readonly v-model="formula"/>
+        <br>
+        <div align="left">
+          <p>Answer:</p>
+        </div>
+        <input id="result"  type="text" readonly placeholder="0" v-model="result"/>
+      </div>
+      <div class="button-container">
+        <div class="key">
+          <button class="inverse option_button" v-on:click="clear" v-on:keyup.delete>CL</button>
+        </div>
+        <div class="key">
+          <button class="inverse option_button" v-on:click="setLeftBracket">(</button>
+        </div>
+        <div class="key">
+          <button class="inverse option_button" v-on:click="setRightBracket">)</button>
+        </div>
+        <div class="key">
+        </div>
+        <div class="key">
+          <button class="primary number_button" v-on:click="setNumber(7)">7</button>
+        </div>
+        <div class="key">
+          <button class="primary number_button" v-on:click="setNumber(8)">8</button>
+        </div>
+        <div class="key">
+          <button class="primary number_button" v-on:click="setNumber(9)">9</button>
+        </div>
+        <div class="key">
+          <button class="tertiary operator_button" v-on:click="setOperator('+')">+</button>
+        </div>
+        <div class="key">
+          <button class="primary number_button" v-on:click="setNumber(4)">4</button>
+        </div>
+        <div class="key">
+          <button class="primary number_button" v-on:click="setNumber(5)">5</button>
+        </div>
+        <div class="key">
+          <button class="primary number_button" v-on:click="setNumber(6)">6</button>
+        </div>
+        <div class="key">
+          <button class="tertiary operator_button" v-on:click="setOperator('-')">-</button>
+        </div>
+        <div class="key">
+          <button class="primary number_button" v-on:click="setNumber(1)">1</button>
+        </div>
+        <div class="key">
+          <button class="primary number_button" v-on:click="setNumber(2)">2</button>
+        </div>
+        <div classs="key">
+          <button class="primary number_button" v-on:click="setNumber(3)">3</button>
+        </div>
+        <div class="key">
+          <button class="tertiary operator_button" v-on:click="setOperator('*')">*</button>
+        </div>
+        <div class="key">
+          <button class="primary number_button" v-on:click="setNumber(0)">0</button>
+        </div>
+        <div class="key">
+          <button class="primary number_button" v-on:click="setPoint">.</button>
+        </div>
+        <div class="key">
+          <button class="secondary enter_button" v-on:click="enter" v-on:keyup.enter="enter">=</button>
+        </div>
+        <div class="key">
+          <button class="tertiary operator_button" v-on:click="setOperator('/')">/</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/public/js/script.js"></script>
+</body>
+
+</html>
+[[end]]
