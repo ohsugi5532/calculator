@@ -1,6 +1,3 @@
-# calculator
-Calculator application.
-
 Calculator
 ====
 
